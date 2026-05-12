@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander Voss - Creative Director</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'sans': ['"Inter"', 'sans-serif']
+                    },
+                    colors: {
+                        'night': '#0a0a0a',
+                        'slate': '#1a1a1a',
+                        'mist': '#2a2a2a',
+                        'accent': '#a8b4ff',
+                        'accent-dark': '#6b7aff'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards',
+                        'float': 'float 6s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(50px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .glass { backdrop-filter: blur(20px); }
+        .cursor-hover { cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><circle cx='16' cy='16' r='2' fill='%23a8b4ff'/></svg>") 16 16, auto; }
+        .project-hover { transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .project-hover:hover { transform: translateY(-20px) scale(1.02); }
+        .filter-active { @apply bg-accent text-night font-semibold; }
+        .video-container { aspect-ratio: 16/9; }
+        @media (max-width: 768px) {
+            .hero-content { transform: translateY(0) scale(0.9); }
+            .project-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="bg-night text-white overflow-x-hidden font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-8 left-8 right-8 z-50 flex items-center justify-between opacity-0 animate-fade-in pointer-events-none group/nav" style="animation-delay: 0.3s;">
+        <div class="text-2xl font-serif font-medium group-hover/nav:text-accent transition-colors duration-500 cursor-hover">AV</div>
+        <div class="flex space-x-8 items-center">
+            <a href="#work" class="text-sm font-medium hover:text-accent transition-colors duration-300 opacity-75 group-hover/nav:opacity-100 pointer-events-auto cursor-hover">Work</a>
+            <a href="#about" class="text-sm font-medium hover:text-accent transition-colors duration-300 opacity-75 group-hover/nav:opacity-100 pointer-events-auto cursor-hover">About</a>
+            <a href="#contact" class="text-sm font-medium hover:text-accent transition-colors duration-300 opacity-75 group-hover/nav:opacity-100 pointer-events-auto cursor-hover">Contact</a>
+            <div class="w-8 h-8 border-2 border-white/20 rounded-full group-hover/nav:scale-110 transition-all duration-300 cursor-hover"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-8 pt-32 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-accent/5 via-transparent to-accent-dark/5 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute -top-40 -right-40 w-[600px] h-[600px] bg-gradient-to-b from-accent/3 to-transparent rounded-full blur-3xl"></div>
+        </div>
+        <div class="text-center max-w-4xl mx-auto hero-content transform transition-all duration-1000">
+            <h1 class="text-7xl md:text-9xl font-serif font-light leading-tight mb-8 opacity-0 animate-slide-up" style="animation-delay: 0.5s;">
+                Alexander<br>
+                <span class="font-medium text-accent tracking-tight">Voss</span>
+            </h1>
+            <p class="text-2xl md:text-3xl font-light text-slate opacity-0 animate-slide-up mb-16 max-w-2xl mx-auto leading-relaxed" style="animation-delay: 0.8s;">
+                Creative Director specializing in<br>
+                <span class="font-medium">Graphic Design • Motion • Photography • Videography</span>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center opacity-0 animate-slide-up" style="animation-delay: 1.1s;">
+                <a href="#work" class="px-12 py-5 bg-accent text-night font-medium text-lg rounded-full hover:bg-accent-dark transition-all duration-300 shadow-2xl hover:shadow-accent/25 hover:-translate-y-2 cursor-hover project-hover">Explore Work</a>
+                <div class="flex space-x-8 text-sm font-medium text-slate">
+                    <a href="#" class="hover:text-accent transition-colors">Instagram</a>
+                    <a href="#" class="hover:text-accent transition-colors">Behance</a>
+                    <a href="#" class="hover:text-accent transition-colors">Vimeo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-40 px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-32">
+            <h2 class="text-5xl md:text-7xl font-serif font-light mb-8">Selected Work</h2>
+            <p class="text-xl text-slate max-w-2xl mx-auto">Curated projects showcasing multidisciplinary creative direction</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="flex flex-wrap gap-4 justify-center mb-24">
+            <button class="filter-btn px-8 py-4 bg-mist/50 text-sm font-medium rounded-full hover:bg-accent transition-all duration-300 filter-active" data-filter="all">All</button>
+            <button class="filter-btn px-8 py-4 bg-mist/50 text-sm font-medium rounded-full hover:bg-accent transition-all duration-300" data-filter="graphic">Graphic</button>
+            <button class="filter-btn px-8 py-4 bg-mist/50 text-sm font-medium rounded-full hover:bg-accent transition-all duration-300" data-filter="motion">Motion</button>
+            <button class="filter-btn px-8 py-4 bg-mist/50 text-sm font-medium rounded-full hover:bg-accent transition-all duration-300" data-filter="photo">Photography</button>
+            <button class="filter-btn px-8 py-4 bg-mist/50 text-sm font-medium rounded-full hover:bg-accent transition-all duration-300" data-filter="video">Videography</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 project-container">
+            <div class="project group relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate to-mist project-hover shadow-2xl cursor-pointer" data-category="graphic">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="video-container bg-gradient-to-r from-purple-500/20 to-pink-500/20"></div>
+                <div class="absolute bottom-8 left-8 right-8">
+                    <h3 class="text-3xl font-serif font-medium mb-2 group-hover:translate-y-2 transition-transform duration-500">Neon Dreams</h3>
+                    <p class="text-slate opacity-90 mb-4">Brand Identity System</p>
+                    <div class="flex items-center text-sm font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        View Project
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project group relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate to-mist project-hover shadow-2xl cursor-pointer" data-category="motion">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="video-container bg-gradient-to-r from-blue-500/20 to-cyan-500/20"></div>
+                <div class="absolute bottom-8 left-8 right-8">
+                    <h3 class="text-3xl font-serif font-medium mb-2 group-hover:translate-y-2 transition-transform duration-500">Fluid Motion</h3>
+                    <p class="text-slate opacity-90 mb-4">Motion Design Campaign</p>
+                    <div class="flex items-center text-sm font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        View Project
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project group relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate to-mist project-hover shadow-2xl cursor-pointer md:col-span-2 xl:col-span-1" data-category="video">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="video-container bg-gradient-to-r from-orange-500/20 to-red-500/20"></div>
+                <div class="absolute bottom-8 left-8 right-8">
+                    <h3 class="text-3xl font-serif font-medium mb-2 group-hover:translate-y-2 transition-transform duration-500">Desert Horizon</h3>
+                    <p class="text-slate opacity-90 mb-4">Cinematic Brand Film</p>
+                    <div class="flex items-center text-sm font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        View Project
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project group relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate to-mist project-hover shadow-2xl cursor-pointer" data-category="photo">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="video-container bg-gradient-to-r from-emerald-500/20 to-teal-500/20"></div>
+                <div class="absolute bottom-8 left-8 right-8">
+                    <h3 class="text-3xl font-serif font-medium mb-2 group-hover:translate-y-2 transition-transform duration-500">Urban Shadows</h3>
+                    <p class="text-slate opacity-90 mb-4">Editorial Photography</p>
+                    <div class="flex items-center text-sm font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        View Project
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project group relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate to-mist project-hover shadow-2xl cursor-pointer" data-category="graphic">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="video-container bg-gradient-to-r from-indigo-500/20 to-violet-500/20"></div>
+                <div class="absolute bottom-8 left-8 right-8">
+                    <h3 class="text-3xl font-serif font-medium mb-2 group-hover:translate-y-2 transition-transform duration-500">Crystal Archive</h3>
+                    <p class="text-slate opacity-90 mb-4">Digital Art Direction</p>
+                    <div class="flex items-center text-sm font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        View Project
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project group relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate to-mist project-hover shadow-2xl cursor-pointer" data-category="motion">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="video-container bg-gradient-to-r from-rose-500/20 to-pink-500/20"></div>
+                <div class="absolute bottom-8 left-8 right-8">
+                    <h3 class="text-3xl font-serif font-medium mb-2 group-hover:translate-y-2 transition-transform duration-500">Eclipse</h3>
+                    <p class="text-slate opacity-90 mb-4">Main Title Sequence</p>
+                    <div class="flex items-center text-sm font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        View Project
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-40 px-8 bg-mist/30">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl md:text-7xl font-serif font-light mb-12">About</h2>
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="opacity-80">
+                    <p class="text-xl leading-relaxed mb-8 text-slate">"I create visual experiences that transcend traditional boundaries, blending graphic precision with cinematic storytelling. My work explores the intersection of form, motion, and emotion."</p>
+                    <p class="text-lg leading-relaxed text-slate">With over a decade of experience, I've collaborated with leading brands to craft unforgettable visual identities and narratives.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-6 mt-12 md:mt-0">
+                    <div class="text-left">
+                        <div class="text-4xl font-serif font-medium text-accent mb-2">12+</div>
+                        <div class="text-sm text-slate uppercase tracking-wider">Years Experience</div>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-4xl font-serif font-medium text-accent mb-2">87</div>
+                        <div class="text-sm text-slate uppercase tracking-wider">Projects Completed</div>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-4xl font-serif font-medium text-accent mb-2">24</div>
+                        <div class="text-sm text-slate uppercase tracking-wider">Awards Won</div>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-4xl font-serif font-medium text-accent mb-2">15+</div>
+                        <div class="text-sm text-slate uppercase tracking-wider">Countries Served</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients & Services -->
+    <section class="py-40 px-8 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-24">
+            <div>
+                <h3 class="text-4xl md:text-5xl font-serif font-light mb-12">Selected Clients</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-12 opacity-60 hover:opacity-100 transition-opacity duration-500">
+                    <div class="h-16 bg-gradient-to-r from-slate to-mist rounded-2xl"></div>
+                    <div class="h-16 bg-gradient-to-r from-slate to-mist rounded-2xl"></div>
+                    <div class="h-16 bg-gradient-to-r from-slate to-mist rounded-2xl"></div>
+                    <div class="h-16 bg-gradient-to-r from-slate to-mist rounded-2xl"></div>
+                    <div class="h-16 bg-gradient-to-r from-slate to-mist rounded-2xl"></div>
+                    <div class="h-16 bg-gradient-to-r from-slate to-mist rounded-2xl"></div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-4xl md:text-5xl font-serif font-light mb-12">Services</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4 group cursor-pointer hover:text-accent transition-colors">
+                        <div class="w-2 h-2 bg-accent rounded-full mt-3 flex-shrink-0 group-hover:scale-150 transition-transform"></div>
+                        <div>
+                            <h4 class="font-medium text-xl mb-1">Creative Direction</h4>
+                            <p class="text-slate">Strategic vision and art direction for brands and campaigns</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 group cursor-pointer hover:text-accent transition-colors">
+                        <div class="w-2 h-2 bg-accent rounded-full mt-3 flex-shrink-0 group-hover:scale-150 transition-transform"></div>
+                        <div>
+                            <h4 class="font-medium text-xl mb-1">Motion Design</h4>
+                            <p class="text-slate">Premium motion graphics and title sequences</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4 group cursor-pointer hover:text-accent transition-colors">
+                        <div class="w-2 h-2 bg-accent rounded-full mt-3 flex-shrink-0 group-hover:scale-150 transition-transform"></div>
+                        <div>
+                            <h4 class="font-medium text-xl mb-1">Brand Identity</h4>
+                            <p class="text-slate">Comprehensive visual identity systems</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-40 px-8 bg-gradient-to-b from-night via-mist/50 to-night">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-5xl md:text-7xl font-serif font-light mb-8">Let's Create</h2>
+            <p class="text-xl text-slate mb-12 max-w-xl mx-auto leading-relaxed">Ready to bring your vision to life? I'm available for select projects.</p>
+            <div class="space-y-6 md:space-y-0 md:flex md:justify-center md:items-center md:space-x-8">
+                <a href="mailto:hello@alexandervoss.com" class="block md:inline-block px-12 py-5 bg-accent text-night font-medium text-lg rounded-full hover:bg-accent-dark transition-all duration-300 shadow-2xl hover:shadow-accent/25 hover:-translate-y-2 cursor-hover project-hover w-full md:w-auto text-center">hello@alexandervoss.com</a>
+                <div class="flex justify-center md:justify-start space-x-6 text-slate">
+                    <a href="#" class="w-10 h-10 border-2 border-white/20 rounded-full flex items-center justify-center hover:border-accent hover:text-accent transition-all duration-300 hover:scale-110">IG</a>
+                    <a href="#" class="w-10 h-10 border-2 border-white/20 rounded-full flex items-center justify-center hover:border-accent hover:text-accent transition-all duration-300 hover:scale-110">LI</a>
+                    <a href="#" class="w-10 h-10 border-2 border-white/20 rounded-full flex items-center justify-center hover:border-accent hover:text-accent transition-all duration-300 hover:scale-110">BE</a>
+                </div>
+            </div>
+            <p class="text-sm text-slate mt-16 opacity-50">© 2024 Alexander Voss. All rights reserved.</p>
+        </div>
+    </section>
+
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projects = document.querySelectorAll('.project');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class
+                filterBtns.forEach(b => b.classList.remove('filter-active', 'bg-accent', 'text-night'));
+                // Add active class
+                btn.classList.add('filter-active', 'bg-accent', 'text-night');
+                
+                const filter = btn.dataset.filter;
+                
+                projects.forEach(project => {
+                    if (filter === 'all' || project.dataset.category === filter) {
+                        project.style.opacity = '1';
+                        project.style.transform = 'translateY(0)';
+                        project.style.pointerEvents = 'auto';
+                    } else {
+                        project.style.opacity = '0';
+                        project.style.transform = 'translateY(20px)';
+                        project.style.pointerEvents = 'none';
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe project items and sections
+        document.querySelectorAll('.project, #about, #contact').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            observer.observe(el);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('pointer-events-auto');
+            } else {
+                nav.classList.remove('pointer-events-auto');
+            }
+        });
+
+        // Custom cursor interactions
+        document.querySelectorAll('.cursor-hover, .project-hover').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                document.body.classList.add('cursor-custom');
+            });
+            el.addEventListener('mouseleave', () => {
+                document.body.classList.remove('cursor-custom');
+            });
+        });
+    </script>
+</body>
+</html>
